@@ -1,0 +1,5 @@
+cd /d "C:\Users\15cse\OneDrive\Desktop\MICROSERVICES_CUCUMBER\inventory-service\inventory-service"
+gradlew.bat test --tests "com.example.inventory_service.cucumber.CucumberTest"
+
+
+same for order service just change the name
