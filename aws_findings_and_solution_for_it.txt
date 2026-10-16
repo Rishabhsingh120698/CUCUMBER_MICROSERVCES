@@ -1,0 +1,16 @@
+Project: Enterprise Employee Onboarding System Using AWS Serverless Architecture
+Business Scenario
+A company’s HR department needs a reliable and scalable application to register new employees. The system must accept employee details through an HTTP API, validate incoming requests, process registrations asynchronously, and store employee records securely.
+The application must handle multiple employee registrations, tolerate temporary processing failures, prevent repeated processing from creating duplicate records, and provide monitoring for troubleshooting.
+Requirements
+Expose a REST API using Amazon API Gateway to receive employee registration requests.
+Use AWS Lambda to validate incoming employee details and publish valid requests to Amazon SQS.
+Return HTTP 202 Accepted when a valid request is queued for processing.
+Use a second Lambda function to consume SQS messages and save employee records in Amazon DynamoDB.
+Configure an Amazon SQS dead-letter queue (DLQ) to capture messages that repeatedly fail processing.
+Configure AWS IAM roles and least-privilege permissions for each Lambda function.
+Use Amazon CloudWatch for application logs, metrics, and alarms.
+Implement input validation, retry handling, and idempotency to improve reliability.
+Expected Outcome
+A fully functional, event-driven, serverless employee onboarding application implemented through the AWS Management Console, without requiring AWS CLI. The solution should demonstrate secure access control, asynchronous processing, failure recovery, and operational monitoring.
+AWS Services: Amazon API Gateway, AWS Lambda, Amazon SQS, Amazon DynamoDB, AWS IAM, and Amazon CloudWatch.
